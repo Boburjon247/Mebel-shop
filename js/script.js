@@ -1,3 +1,17 @@
+// loading
+
+const loading = document.querySelector('.loading');
+const section = document.querySelector('.section');
+
+setInterval(() => {
+     loading.classList.add('hide');
+     section.classList.add('active')
+}, 2000);
+
+
+
+
+
 // tap
 const button_item = document.querySelectorAll(".btn_tap");
 const tabPanel = document.querySelectorAll(".items_window");
@@ -110,15 +124,70 @@ const check = document.querySelector('#slideThree');
 const input_chek = document.querySelectorAll('.input_chek')
 
 check.addEventListener('click', (e) => {
-     if(check.checked == true){
+     if (check.checked == true) {
           input_chek.forEach(element => {
                element.removeAttribute('readonly')
           });
      }
-     else{
+     else {
           input_chek.forEach(element => {
                element.setAttribute("readonly", "readonly");
           });
 
      }
 });
+
+
+
+// search qidirish oynasi
+const search1 = document.querySelector('#user_search1'); //input
+const search2 = document.querySelector('#user_search2'); //input
+const search3 = document.querySelector('#user_search3'); //input
+const search4 = document.querySelector('#user_search4'); //input
+//qidirilayotgan element ona blogi
+
+function filter_list(itemInput, itemList, itemListPre) {
+     itemList.forEach((element, index) => {
+          itemListPre.forEach((e, i) => {
+               if (index == i) {
+                    let re = new RegExp(itemInput.value, 'i');
+                    if (re.test(element.textContent)) {
+                         element.innerHTML = element.textContent.replace(re, '<b>$&</b>');
+                         e.style.display = 'flex';
+                    }
+                    else {
+                         e.style.display = 'none';
+                    }
+               }
+          })
+     })
+}
+
+search1.addEventListener('input', () => {
+     filter_list(
+          search1,
+          document.querySelectorAll('.users_items_name li .user_name_title'),
+          document.querySelectorAll('.users_items_name li'))
+})
+search2.addEventListener('input', () => {
+     filter_list(
+          search2,
+          document.querySelectorAll('.users_items_name2 li .user_name_title'),
+          document.querySelectorAll('.users_items_name2 li')
+     )
+})
+search3.addEventListener('input', () => {
+     filter_list(
+          search3,
+          document.querySelectorAll('.users_items_name3 li .user_name_title'),
+          document.querySelectorAll('.users_items_name3 li')
+     )
+})
+search4.addEventListener('input', () => {
+     filter_list(
+          search4,
+          document.querySelectorAll('.users_items_name4 li .user_name_title'),
+          document.querySelectorAll('.users_items_name4 li')
+     )
+})
+

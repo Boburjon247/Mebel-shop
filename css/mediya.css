@@ -24,6 +24,10 @@
      .bar_left .btn_bar_close {
           display: block;
      }
+
+     .cilent_about {
+          grid-template-columns: 1fr 1fr;
+     }
 }
 
 /* Medium Devices, Desktops */
@@ -67,8 +71,33 @@
      .cilent-add {
           grid-template-columns: 1fr !important;
      }
+
      .cilent-item_img {
           grid-column: 1/1;
+     }
+
+     .cilent_about {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+     }
+
+     .cilent_about .title_cilent_about {
+          display: none;
+     }
+
+     .title_cilent_about_icon {
+          font-size: 20px;
+     }
+
+     .search_title {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          flex-direction: column;
+          padding: 0 15px;
+     }
+
+     .search_title input {
+          width: 100%;
      }
 }
 
@@ -108,6 +137,33 @@
           font-size: 12px !important;
      }
 
+     .user_name_cilent p:nth-child(1) {
+          font-size: 15px;
+     }
+
+     .user_date p:nth-child(1) {
+          font-size: 15px;
+     }
+
+     .users_items_name li .img {
+          width: 40px;
+          height: 40px;
+     }
+     .users_items_name li .img{
+          display: none;
+     }
+     .edit_delete_button .button_items{
+          gap: 5px;
+     }
+     .edit_delete_button button{
+          padding: 5px;
+     }
+     .edit_delete_button button i{
+          font-size: 12px;
+     }
+     .edit_delete_title{
+          font-size: 17px;
+     }
 }
 
 @media only screen and (max-width : 400px) {
