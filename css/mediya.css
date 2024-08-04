@@ -1,0 +1,128 @@
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+     .left_bat_top {
+          display: none;
+     }
+
+     .body_content {
+          grid-template-columns: 1fr;
+     }
+
+     .left_content {
+          width: 300px;
+          height: 91vh;
+          position: absolute;
+          z-index: 150000000;
+          left: -100%;
+          transition: all .5s ease-in-out;
+     }
+
+     .left_content.active {
+          left: 0;
+     }
+
+     .bar_left .btn_bar_close {
+          display: block;
+     }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+     .text_value ul li .chart_items p {
+          font-size: 15px !important;
+     }
+
+     .card_bar .card_items .card_content .user_text_blok {
+          font-size: 12px;
+     }
+
+     .card_bar {
+          grid-template-columns: 1fr 1fr;
+     }
+
+     .chart_bar {
+          margin-bottom: 60px;
+     }
+
+     .profil_content {
+          grid-template-columns: 1fr;
+     }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+     .card_items {
+          margin-bottom: 20px;
+     }
+
+     .chart_bar {
+          grid-template-columns: 1fr;
+     }
+
+     .user_profil_about li {
+          font-size: 15px;
+     }
+
+     .cilent-add {
+          grid-template-columns: 1fr !important;
+     }
+     .cilent-item_img {
+          grid-column: 1/1;
+     }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+     .user_name,
+     .date_title {
+          display: none;
+     }
+
+     .card_bar {
+          grid-template-columns: 1fr;
+     }
+
+     .text_value ul li .chart_items p {
+          font-size: 13px !important;
+     }
+
+     .text_value ul li .chart_items .img {
+          width: 25px;
+     }
+
+     .content_reg {
+          margin: 30px;
+     }
+
+     .lable_title {
+          font-size: 20px;
+     }
+
+     .lable_title2 {
+          font-size: 13px;
+     }
+
+     .nav-link {
+          font-size: 12px !important;
+     }
+
+}
+
+@media only screen and (max-width : 400px) {
+     .text_value ul li .chart_items p {
+          font-size: 13px !important;
+     }
+
+     .text_value ul li {
+          grid-template-columns: 4fr 1fr 4fr;
+     }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+     .left_content {
+          width: 100%;
+     }
+}
