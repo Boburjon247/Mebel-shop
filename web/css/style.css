@@ -220,6 +220,10 @@ p {
      display: grid;
      grid-template-columns: 1.65fr 8fr;
 }
+.body_content.user_edit{
+     grid-template-columns: 1fr !important;
+
+}
 
 .left_content {
      padding: 8px;
@@ -1061,6 +1065,9 @@ button.btn span::after {
      align-items: center;
      justify-content: center;
      flex-direction: column;
+}
+.users_items_name form{
+     width: 100%;
 }
 
 .users_items_name li {

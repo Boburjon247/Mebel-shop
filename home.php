@@ -1,3 +1,9 @@
+<?php
+global $config;
+include  'config.php';
+include 'libs/libs.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,16 +15,14 @@
      <!-- awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
      <!-- bootstrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <!-- google font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-          rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
      <!-- style -->
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="css/mediya.css">
+     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/style.css">
+     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/mediya.css">
 </head>
 
 <body>
@@ -75,7 +79,7 @@
                               </div>
                               <div class="user">
                                    <div class="img">
-                                        <img src="img/User_icon_2.svg.png" alt="">
+                                        <img src="<?= $config['base']['url'] . 'web/' ?>img/User_icon_2.svg.png" alt="">
                                    </div>
                                    <div class="user_name">
                                         <p>Boburjon</p>
@@ -171,8 +175,7 @@
                               </div>
                               <div class="card_items">
                                    <div class="card_content">
-                                        <span class="user_icon_blok"><i
-                                                  class="fa-solid fa-person-circle-exclamation"></i></span>
+                                        <span class="user_icon_blok"><i class="fa-solid fa-person-circle-exclamation"></i></span>
                                         <span class="user_text_blok">Qarz mudati tugaagan kilent</span>
                                         <p class="number_kilent">999</p>
                                    </div>
@@ -190,14 +193,14 @@
                                         <li>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/united-states.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/united-states.png" alt="">
                                                   </div>
                                                   <p>1 USD</p>
                                              </div>
                                              <span>⇔</span>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/flag.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/flag.png" alt="">
                                                   </div>
                                                   <p class="usd_val"></p>
                                              </div>
@@ -205,14 +208,14 @@
                                         <li>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/russia.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/russia.png" alt="">
                                                   </div>
                                                   <p>1 RUB</p>
                                              </div>
                                              <span>⇔</span>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/flag.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/flag.png" alt="">
                                                   </div>
                                                   <p class="rub_val"></p>
                                              </div>
@@ -220,14 +223,14 @@
                                         <li>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/united-kingdom.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/united-kingdom.png" alt="">
                                                   </div>
                                                   <p>1 GBP</p>
                                              </div>
                                              <span>⇔</span>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/flag.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/flag.png" alt="">
                                                   </div>
                                                   <p class="gbp_val"></p>
                                              </div>
@@ -235,14 +238,14 @@
                                         <li>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/european-union.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/european-union.png" alt="">
                                                   </div>
                                                   <p>1 EUR</p>
                                              </div>
                                              <span>⇔</span>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/flag.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/flag.png" alt="">
                                                   </div>
                                                   <p class="eur_val"></p>
                                              </div>
@@ -250,14 +253,14 @@
                                         <li>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/united-arab-emirates.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/united-arab-emirates.png" alt="">
                                                   </div>
                                                   <p>1 AED</p>
                                              </div>
                                              <span>⇔</span>
                                              <div class="chart_items">
                                                   <div class="img">
-                                                       <img src="img/flag.png" alt="">
+                                                       <img src="<?= $config['base']['url'] . 'web/' ?>img/flag.png" alt="">
                                                   </div>
                                                   <p class="aed_val"></p>
                                              </div>
@@ -271,43 +274,43 @@
                     <!-- items_window 2 -->
 
                     <div class="items_window">
-                         <form action="" class="cilent-add">
+                         <form action="" method="post" class="cilent-add">
                               <div class="cilent-item cilent-item_img">
                                    <div class="cilent_img">
-                                        <img src="img/User_icon_2.svg.png" alt="">
+                                        <img src="<?= $config['base']['url'] . 'web/' ?>img/User_icon_2.svg.png" alt="">
                                    </div>
                               </div>
                               <div class="cilent-item">
                                    <label for="">Ism :</label>
-                                   <input type="text" placeholder="Ism:">
+                                   <input name="ism" type="text" placeholder="Ism:">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Familya :</label>
-                                   <input type="text" placeholder="Familya">
+                                   <input name="fam" type="text" placeholder="Familya">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Telefon raqami1</label>
-                                   <input type="text" placeholder="Telefon raqami1">
+                                   <input name="tel1" type="text" placeholder="Telefon raqami1">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Telefon raqami2</label>
-                                   <input type="text" placeholder="Telefon raqami2">
+                                   <input name="tel2" type="text" placeholder="Telefon raqami2">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Viloyat</label>
-                                   <input type="text" placeholder="Viloyat">
+                                   <input name="viloyat" type="text" placeholder="Viloyat">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Tuman</label>
-                                   <input type="text" placeholder="Tuman">
+                                   <input name="tuman" type="text" placeholder="Tuman">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Manzil</label>
-                                   <input type="text" placeholder="Manzil">
+                                   <input name="manzil" type="text" placeholder="Manzil">
                               </div>
                               <div class="cilent-item">
                                    <label for="">Maxsulot nomi</label>
-                                   <input type="text" placeholder="Maxsulot nomi">
+                                   <input name="m_nomi" type="text" placeholder="Maxsulot nomi">
                               </div>
                               <div class="cilent-item cilent-item-date">
                                    <label for="">
@@ -322,12 +325,12 @@
                                         </span>
                                    </label>
                                    <div class="cilent-item-date-input">
-                                        <input class="input_chek" type="text" placeholder="Miqdori" readonly>
-                                        <input class="input_chek" type="date" placeholder="Vaqti" readonly>
+                                        <input name="miqdor" class="input_chek" type="text" placeholder="Miqdori" readonly>
+                                        <input name="qarz_vaqt" class="input_chek" type="date" placeholder="Vaqti" readonly>
                                    </div>
                               </div>
                               <div class="btn_cilent">
-                                   <button class="cilent_add_btn">Saqlash</button>
+                                   <button type="submit" name="cilentAdd" class="cilent_add_btn">Saqlash</button>
                               </div>
 
                          </form>
@@ -336,44 +339,32 @@
                     <div class="items_window">
                          <ul class="cilent_about nav nav-tabs" id="myTab" role="tablist">
                               <li class="nav-item" role="presentation">
-                                   <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">
+                                   <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                                         <span class="title_cilent_about_icon"><i class="fa-solid fa-users"></i></span>
                                         <span class="title_cilent_about">Ummumiy kilent</span>
                                    </button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                   <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                        aria-selected="false">
-                                        <span class="title_cilent_about_icon"><i
-                                                  class="fa-solid fa-users-gear"></i></span>
+                                   <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                        <span class="title_cilent_about_icon"><i class="fa-solid fa-users-gear"></i></span>
                                         <span class="title_cilent_about">Xizmat ko'rsatish kerak</span>
                                    </button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                   <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
-                                        aria-selected="false">
-                                        <span class="title_cilent_about_icon"><i
-                                                  class="fa-solid fa-user-clock"></i></span>
+                                   <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                                        <span class="title_cilent_about_icon"><i class="fa-solid fa-user-clock"></i></span>
                                         <span class="title_cilent_about">Qarzdor kilent</span>
                                    </button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                   <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                        data-bs-target="#contact2" type="button" role="tab" aria-controls="contact2"
-                                        aria-selected="false">
-                                        <span class="title_cilent_about_icon"> <i
-                                                  class="fa-solid fa-person-circle-exclamation"></i></span>
+                                   <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact2" type="button" role="tab" aria-controls="contact2" aria-selected="false">
+                                        <span class="title_cilent_about_icon"> <i class="fa-solid fa-person-circle-exclamation"></i></span>
                                         <span class="title_cilent_about">Qarz mudati tugaagan kilent</span>
                                    </button>
                               </li>
                          </ul>
                          <div class="tab-content" id="myTabContent">
-                              <div class="tab-pane cilent_type fade show active" id="home" role="tabpanel"
-                                   aria-labelledby="home-tab">
+                              <div class="tab-pane cilent_type fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                    <div class="search_title">
                                         <label for="">Ummumiy kilent</label>
                                         <input type="search" id="user_search1" placeholder="Qidiruv">
@@ -411,8 +402,7 @@
                                         </li>
                                    </ul>
                               </div>
-                              <div class="tab-pane fade cilent_type" id="profile" role="tabpanel"
-                                   aria-labelledby="profile-tab">
+                              <div class="tab-pane fade cilent_type" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                    <div class="search_title">
                                         <label for="">Xizmat ko'rsatish kerak</label>
                                         <input type="search" id="user_search2" placeholder="Qidiruv">
@@ -451,8 +441,7 @@
                                    </ul>
 
                               </div>
-                              <div class="tab-pane fade cilent_type" id="contact" role="tabpanel"
-                                   aria-labelledby="contact-tab">
+                              <div class="tab-pane fade cilent_type" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                    <div class="search_title">
                                         <label for="">Qarzdor kilent</label>
                                         <input type="search" id="user_search3" placeholder="Qidiruv">
@@ -490,8 +479,7 @@
                                         </li>
                                    </ul>
                               </div>
-                              <div class="tab-pane fade cilent_type" id="contact2" role="tabpanel"
-                                   aria-labelledby="contact-tab">
+                              <div class="tab-pane fade cilent_type" id="contact2" role="tabpanel" aria-labelledby="contact-tab">
                                    <div class="search_title">
                                         <label for="">Qarz mudati tugaagan kilent</label>
                                         <input type="search" id="user_search4" placeholder="Qidiruv">
@@ -537,27 +525,34 @@
                          </div>
                          <div class="edit_delete_home">
                               <ul class="users_items_name">
-                                   <li>
-                                        <div class="d-flex align-items-center gap-2">
-                                             <div class="img">
-                                                  <img src="img/user_2.png" alt="">
-                                             </div>
-                                             <div class="user_name_cilent">
-                                                  <p class="user_name_title">Bahromjon</p>
-                                                  <p>Mahsulot nomi</p>
-                                             </div>
-                                        </div>
-                                        <div class="user_date edit_delete_button">
-                                             <div class="">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                             <div class="button_items">
-                                                  <button><i class="fa-solid fa-pen-to-square"></i></button>
-                                                  <button><i class="fa-solid fa-trash"></i></button>
-                                             </div>
-                                        </div>
-                                   </li>
+                                   <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
+                                        <form action="<?= $config['base']['url'].'userEdit.php'?>" method="post">
+                                             <li>
+                                                  <input type="hidden" name="id" value="<?= $user['id']?>" >
+                                                  <div class="d-flex align-items-center gap-2">
+                                                       <div class="img">
+                                                            <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
+                                                       </div>
+                                                       <div class="user_name_cilent">
+                                                            <p class="user_name_title">
+                                                                 <?= $user['ism'] . ' ' . $user['fam'] ?>
+                                                            </p>
+                                                            <p><?= $user['maxsulotNomi'] ?></p>
+                                                       </div>
+                                                  </div>
+                                                  <div class="user_date edit_delete_button">
+                                                       <div class="">
+                                                            <p><?= $user['date'] ?></p>
+                                                       </div>
+                                                       <div class="button_items">
+                                                            <button type="submit" name="user_id"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                            <button type="submit" name="user_id_delete"><i class="fa-solid fa-trash"></i></button>
+                                                       </div>
+                                                  </div>
+                                             </li>
+                                        </form>
+                                   <?php endforeach; ?>
+
                               </ul>
                          </div>
                     </div>
@@ -566,120 +561,119 @@
                          <div class="profil_content">
                               <div class="item_profil item_profil_left">
                                    <div class="img_profil">
-                                        <img src="img/User_icon_2.svg.png" alt="">
+                                        <img src="<?= $config['base']['url'] . 'web/' ?>img/User_icon_2.svg.png" alt="">
                                    </div>
-                                   <div class="user_name_profil">
-                                        <p>Abdunazarov Boburjon</p>
-                                   </div>
-                                   <ul>
-                                        <li>
-                                             <a href="" title="telegram"><i class="fa-brands fa-telegram"></i></a>
-                                        </li>
-                                        <li>
-                                             <a href="" title="instagram"><i
-                                                       class="fa-brands fa-square-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                             <a href="" title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                             <a href="" title="facebook"><i class="fa-brands fa-facebook"></i></a>
-                                        </li>
-                                   </ul>
+                                   <?php foreach (GetAll('admin', 'false', 'asc') as $key => $admin) : ?>
+                                        <div class="user_name_profil">
+                                             <p><?= $admin['ism'] . ' ' . $admin['fam'] ?></p>
+                                        </div>
+                                        <ul>
+                                             <li>
+                                                  <a target="" href="<?= $admin['telegram'] ?>" title="telegram"><i class="fa-brands fa-telegram"></i></a>
+                                             </li>
+                                             <li>
+                                                  <a target="" href="<?= $admin['instagram'] ?>" title="instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                                             </li>
+                                             <li>
+                                                  <a target="" href="<?= $admin['linkedin'] ?>" title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                             </li>
+                                             <li>
+                                                  <a target="" href="<?= $admin['facebook'] ?>" title="facebook"><i class="fa-brands fa-facebook"></i></a>
+                                             </li>
+                                        </ul>
+                                   <?php endforeach; ?>
                               </div>
                               <div class="item_profil item_profil_right">
                                    <ul class="nav nav-tabs item_profil_tabs" id="myTab" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                                  data-bs-target="#home_profil" type="button" role="tab"
-                                                  aria-controls="home" aria-selected="true">Umumiy koʻrinish</button>
+                                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home_profil" type="button" role="tab" aria-controls="home" aria-selected="true">Umumiy koʻrinish</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                             <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                                  data-bs-target="#profile_profil" type="button" role="tab"
-                                                  aria-controls="profile" aria-selected="false">Profilni
+                                             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile_profil" type="button" role="tab" aria-controls="profile" aria-selected="false">Profilni
                                                   tahrirlash</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                                  data-bs-target="#contact_profil" type="button" role="tab"
-                                                  aria-controls="contact" aria-selected="false">Parolni
+                                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact_profil" type="button" role="tab" aria-controls="contact" aria-selected="false">Parolni
                                                   o'zgartirish</button>
                                         </li>
                                    </ul>
                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home_profil" role="tabpanel"
-                                             aria-labelledby="home-tab">
+                                        <div class="tab-pane fade show active" id="home_profil" role="tabpanel" aria-labelledby="home-tab">
                                              <ul class="user_profil_about">
-                                                  <li>
-                                                       <span>Ism :</span>
-                                                       <span>Boburjon</span>
-                                                  </li>
-                                                  <li>
-                                                       <span>Familya :</span>
-                                                       <span>Abdunazarov</span>
-                                                  </li>
-                                                  <li>
-                                                       <span>Telefon raqam :</span>
-                                                       <span>+998976665979</span>
-                                                  </li>
-                                                  <li>
-                                                       <span>Login :</span>
-                                                       <span>abdunazarov_247</span>
-                                                  </li>
-                                                  <li>
-                                                       <span>Parol :</span>
-                                                       <span>boburjon2003</span>
-                                                  </li>
+                                                  <?php foreach (GetAll('admin', 'false', 'asc') as $key => $admin) : ?>
+                                                       <li>
+                                                            <span>Ism :</span>
+                                                            <span><?= $admin['ism'] ?></span>
+                                                       </li>
+                                                       <li>
+                                                            <span>Familya :</span>
+                                                            <span><?= $admin['fam'] ?></span>
+                                                       </li>
+                                                       <li>
+                                                            <span>Telefon raqam :</span>
+                                                            <span><?= $admin['tel'] ?></span>
+                                                       </li>
+                                                       <li>
+                                                            <span>Login :</span>
+                                                            <span><?= $admin['login'] ?></span>
+                                                       </li>
+                                                       <li>
+                                                            <span>Parol :</span>
+                                                            <span><?= $admin['parol'] ?></span>
+                                                       </li>
+                                                  <?php endforeach; ?>
                                              </ul>
                                         </div>
-                                        <div class="tab-pane fade edit_user_items_row_bolok" id="profile_profil"
-                                             role="tabpanel" aria-labelledby="profile-tab">
-                                             <form action="" class="edit_user_items_row">
-                                                  <div class="edit_user_items">
-                                                       <label for="">Ism</label>
-                                                       <input type="text" name="ism" placeholder="Ism">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Familya</label>
-                                                       <input type="text" name="fam" placeholder="Familya">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Telefon raqam</label>
-                                                       <input type="text" name="tel" placeholder="Telefon raqam">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Telegram</label>
-                                                       <input type="text" name="telegram" placeholder="Telegram">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Instagram</label>
-                                                       <input type="text" name="Instagram" placeholder="Instagram">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Linkedin</label>
-                                                       <input type="text" name="linkedin" placeholder="Linkedin">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Facebook</label>
-                                                       <input type="text" name="facebook" placeholder="Facebook">
-                                                  </div>
-                                                  <button type="submit" class="btn-user-edit">Saqlash</button>
-                                             </form>
+                                        <div class="tab-pane fade edit_user_items_row_bolok" id="profile_profil" role="tabpanel" aria-labelledby="profile-tab">
+                                             <?php foreach (GetAll('admin', 1, 'asc') as $key => $admin) : ?>
+                                                  <form action="" class="edit_user_items_row" method="post">
+                                                       <div class="edit_user_items">
+                                                            <label for="">Ism</label>
+                                                            <input value="<?= $admin['ism'] ?>" type="text" name="ism" placeholder="Ism">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Familya</label>
+                                                            <input value="<?= $admin['fam'] ?>" type="text" name="fam" placeholder="Familya">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Telefon raqam</label>
+                                                            <input value="<?= $admin['tel'] ?>" type="text" name="tel" placeholder="Telefon raqam">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Telegram</label>
+                                                            <input value="<?= $admin['telegram'] ?>" type="text" name="telegram" placeholder="Telegram">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Instagram</label>
+                                                            <input value="<?= $admin['instagram'] ?>" type="text" name="instagram" placeholder="Instagram">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Linkedin</label>
+                                                            <input value="<?= $admin['linkedin'] ?>" type="text" name="linkedin" placeholder="Linkedin">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Facebook</label>
+                                                            <input value="<?= $admin['facebook'] ?>" type="text" name="facebook" placeholder="Facebook">
+                                                       </div>
+                                                       <button name="btn_admin_update" type="submit" class="btn-user-edit">Saqlash</button>
+                                                  </form>
+                                             <?php endforeach; ?>
+
                                         </div>
-                                        <div class="tab-pane fade" id="contact_profil" role="tabpanel"
-                                             aria-labelledby="contact-tab">
-                                             <form action="" class="edit_user_items_row">
-                                                  <div class="edit_user_items">
-                                                       <label for="">Login</label>
-                                                       <input type="text" name="login" placeholder="login">
-                                                  </div>
-                                                  <div class="edit_user_items">
-                                                       <label for="">Parol</label>
-                                                       <input type="text" name="parol" placeholder="parol">
-                                                  </div>
-                                                  <button type="submit" class="btn-user-edit">Saqlash</button>
-                                             </form>
+                                        <div class="tab-pane fade" id="contact_profil" role="tabpanel" aria-labelledby="contact-tab">
+                                             <?php foreach (GetAll('admin', 1, 'asc') as $key => $admin) : ?>
+                                                  <form action="" class="edit_user_items_row" method="post">
+                                                       <div class="edit_user_items">
+                                                            <label for="">Login</label>
+                                                            <input value="<?= $admin['login'] ?>" type="text" name="login" placeholder="login">
+                                                       </div>
+                                                       <div class="edit_user_items">
+                                                            <label for="">Parol</label>
+                                                            <input value="<?= $admin['parol'] ?>" type="text" name="parol" placeholder="parol">
+                                                       </div>
+                                                       <button name="parol_admin_update" type="submit" class="btn-user-edit">Saqlash</button>
+                                                  </form>
+                                             <?php endforeach; ?>
                                         </div>
                                    </div>
                               </div>
@@ -693,10 +687,143 @@
 
      <!-- script -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-     <script src="js/script.js"></script>
+     <script src="<?= $config['base']['url'] . 'web/' ?>js/script.js"></script>
      <!-- bootstrap -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
 </html>
+
+<?php
+// /$date1 = date('Y-m-d');
+// $date2 = new DateTime('2024-08-30');
+// 
+// echo $date1;
+// echo $date2;
+
+// $interval = $date1->diff($date2);
+// echo $interval->days; // 3 kunni ko'rsatadi
+// 
+
+?>
+<?php
+
+
+// cilent qoshish
+if (isset($_POST['cilentAdd'])) {
+     if (
+          (isset($_POST['ism']) && !empty($_POST['ism'])) &&
+          (isset($_POST['fam']) && !empty($_POST['fam'])) &&
+          (isset($_POST['tel1']) && !empty($_POST['tel1'])) &&
+          (isset($_POST['tel2']) && !empty($_POST['tel2'])) &&
+          (isset($_POST['viloyat']) && !empty($_POST['viloyat'])) &&
+          (isset($_POST['tuman']) && !empty($_POST['tuman']))
+     ) {
+          if ((isset($_POST['miqdor']) && !empty($_POST['miqdor'])) && isset($_POST['qarz_vaqt']) && !empty($_POST['qarz_vaqt'])) {
+               $s_miqdor = $_POST['miqdor'];
+               $qarz_vaqt = $_POST['qarz_vaqt'];
+          } else {
+               $s_miqdor = null;
+               $qarz_vaqt = null;
+          }
+          // Bugungi sanani olish
+          $today = new DateTime();
+          $bugin = $today->format('Y-m-d') . "\n";
+
+          // 3 oy qo'shish
+          $threeMonthsLater = clone $today; // Bugungi sanani nusxalash
+          $threeMonthsLater->modify('+3 months');
+          $uchoy = $threeMonthsLater->format('Y-m-d') . "\n";
+
+          $aloqaInputGet = test_input([
+               $_POST['ism'],
+               $_POST['fam'],
+               $_POST['tel1'],
+               $_POST['tel2'],
+               $_POST['viloyat'],
+               $_POST['tuman'],
+               $_POST['manzil'],
+               $_POST['m_nomi'],
+               $s_miqdor,
+               $qarz_vaqt,
+               $uchoy,
+               $bugin
+          ]);
+          if (
+               getInsert(
+                    'user',
+                    ['ism', 'fam', 'tel1', 'tel2', 'viloyat', 'tuman', 'manzil', 'maxsulotNomi', 'miqdorSum', 'sanaQarz', 'sana3oy', 'date'],
+                    $aloqaInputGet
+               )
+          ) {
+               // $_SESSION['error'] = "Yangi xodim qo'shildi 😁";
+               reflesh(url_home, '');
+          }
+     }
+}
+
+
+
+// admin malumotlarini yangilash
+if (isset($_POST['btn_admin_update'])) {
+     if (
+          (isset($_POST['ism']) && !empty($_POST['ism'])) &&
+          (isset($_POST['fam']) && !empty($_POST['fam'])) &&
+          (isset($_POST['tel']) && !empty($_POST['tel'])) &&
+          (isset($_POST['telegram']) && !empty($_POST['telegram']))
+     ) {
+          $aloqaInputGet = test_input1([
+               $_POST['ism'],
+               $_POST['fam'],
+               $_POST['tel'],
+               $_POST['telegram'],
+               $_POST['instagram'],
+               $_POST['linkedin'],
+               $_POST['facebook']
+          ]);
+          $db = connection();
+
+          $sql = $db->query("UPDATE admin SET 
+                    ism = '{$aloqaInputGet[0]}',
+                    fam = '{$aloqaInputGet[1]}',
+                    tel = '{$aloqaInputGet[2]}',
+                    telegram= '{$aloqaInputGet[3]}',
+                    instagram = '{$aloqaInputGet[4]}',
+                    linkedin = '{$aloqaInputGet[5]}',
+                    facebook = '{$aloqaInputGet[6]}'
+                    WHERE id= 1");
+          if ($sql) {
+               reflesh(url_home, '');
+          } else {
+               reflesh(url_home, '');
+          }
+     }
+}
+
+// admin login parol yangilash
+if (isset($_POST['parol_admin_update'])) {
+     if (
+          (isset($_POST['login']) && !empty($_POST['login'])) &&
+          (isset($_POST['parol']) && !empty($_POST['parol']))
+     ) {
+          $aloqaInputGet = test_input1([
+               $_POST['login'],
+               $_POST['parol'],
+          ]);
+          $db = connection();
+
+          $sql = $db->query("UPDATE admin SET 
+                    login = '{$aloqaInputGet[0]}',
+                    parol = '{$aloqaInputGet[1]}'
+                    WHERE id= 1");
+          if ($sql) {
+               reflesh(url_home, '');
+          } else {
+               reflesh(url_home, '');
+          }
+     }
+}
+
+
+?>

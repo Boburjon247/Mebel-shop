@@ -1,3 +1,9 @@
+<?php
+global $config;
+include 'libs/libs.php';
+include  'config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +11,8 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Login</title>
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="css/mediya.css">
+     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/style.css">
+     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/mediya.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
@@ -17,15 +23,14 @@
                <div class="content content_reg">
                     <p class="lable_title">Login to Your Account</p>
                     <span class="lable_title2">Enter your username & password to login</span>
-                    <form action="#" class="login_1 Tab_C">
+                    <form action="" method="post" class="login_1 Tab_C">
                          <div class="form-group">
-                              <input type="text" class="username" required="required">
+                              <input name="user" type="text" class="username" required="required">
                               <span for="username" class="text_uesr"">Username</span>
                              <i class=" fa-regular fa-user user_regist"></i>
                          </div>
                          <div class="form-group">
-                              <input type="password" class="form-control password_login_reg" id="password"
-                                   required="required">
+                              <input name="parol" type="password" class="form-control password_login_reg" id="password" required="required">
                               <span for="password">Password</span>
                               <i class="fa-solid fa-lock pas_regist"></i>
                               <p class="eyes">
@@ -39,7 +44,7 @@
                               </label>
                          </div>
                          <div class="regis_btn">
-                              <button class="btn registration-btn">
+                              <button type="submit" name="loginBtn" class="btn registration-btn">
                                    <span>Login</span>
                               </button>
                          </div>
@@ -49,5 +54,25 @@
      </div>
 </body>
 
-<script src="js/login.js"></script>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/login.js"></script>
+
 </html>
+
+
+<?php
+if (isset($_POST['loginBtn'])) {
+     if (
+          (isset($_POST['user']) && !empty($_POST['user'])) &&
+          (isset($_POST['parol']) && !empty($_POST['parol']))
+     ) {
+          $login = $_POST['user'];
+          $password = $_POST['parol'];
+
+          if (getHasId('admin', ['login', 'parol'], [$login, $password], "AND id=1")) {
+               // $_SESSION['login'] = 'system';
+               reflesh(url_home,'');
+          }
+     }
+}
+
+?>
