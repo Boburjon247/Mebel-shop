@@ -11,7 +11,6 @@ include 'libs/libs.php';
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Mebel || Admin</title>
-
      <!-- awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
      <!-- bootstrap -->
@@ -26,33 +25,6 @@ include 'libs/libs.php';
 </head>
 
 <body>
-     <!-- loading -->
-     <!-- <div class="loading">
-          <div class="page">
-               <div class="logo-wrapper">
-                    <svg id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
-                         style="enable-background:new 0 0 500 500;" xml:space="preserve">
-
-                         <rect class="whitebg-alp" id="preload_bar" x="20" y="490" class="line_icon line_icon_thin"
-                              width="460" height="460" />
-
-                         <path id="dark_x5F_bg" class="blackbg" d="M0.5,0.5v499h499V0.5H0.5z M482.03,467.96c0,1.76-1.19,1.54-1.19,1.54s-457.1,0-461.69,0
-                  c0,0-1.19,0.22-1.19-1.54c0-6.12-0.02-27.86-0.02-29.47c0-0.94,0.16-2.4,0.48-3c4.06-7.93,197.62-384,197.62-384h0.01
-                  c6.27-12,19.18-21,33.88-21h0.16c14.69,0,27.6,9,33.86,21h0.02c0,0,193.56,376.08,197.62,384.01c0.32,0.6,0.48,1.95,0.48,2.89
-                  C482.06,440.01,482.03,461.84,482.03,467.96z" />
-
-                         <path id="logo" class="whitebg" d="M283.96,52h-0.02c-6.26-12-19.17-21-33.86-22h-0.16c-14.7,1-27.61,10-33.88,22h-0.01
-                  c0,0-193.56,375.83-197.62,383.76c-0.31,0.6-0.48,1.86-0.48,2.8c0,1.61,0.02,23.55,0.02,29.67c0,1.76,1.19,1.77,1.19,1.77
-                  c4.6,0,461.69,0,461.69,0s1.19-0.03,1.19-1.79c0-6.12,0.03-27.99,0.03-29.6c0-0.94-0.16-2.21-0.48-2.81
-                  C477.52,427.88,283.96,52,283.96,52z M366.25,437.3l-56.55-109.52L250,442.86l0-0.01l0,0.01l-59.7-115.07l-56.55,109.36L53.47,437
-                  l0,0h-0.01l132.8-257.71l0,0.08l0,0.03L250,298.74l63.73-119.3l132.8,257.87L366.25,437.3z" />
-
-                    </svg>
-               </div>
-          </div>
-     </div> -->
-
 
      <section class="container-fluid section active">
 
@@ -146,17 +118,21 @@ include 'libs/libs.php';
                <div class="right_content">
 
                     <!-- items_window 1 -->
-
+                    <!-- bosh sahifa -->
                     <div class="items_window">
-
                          <!-- card_bar -->
-
                          <div class="card_bar">
                               <div class="card_items">
                                    <div class="card_content">
                                         <span class="user_icon_blok"><i class="fa-solid fa-users"></i></span>
                                         <span class="user_text_blok">Ummumiy kilent</span>
-                                        <p class="number_kilent">999</p>
+                                        <p class="number_kilent">
+                                             <?php
+                                             $userArray = GetAll('user', 'false', 'asc');
+                                             $userArrayLength = count($userArray);
+                                             echo $userArrayLength;
+                                             ?>
+                                        </p>
                                    </div>
                               </div>
                               <div class="card_items">
@@ -272,7 +248,7 @@ include 'libs/libs.php';
                     </div>
 
                     <!-- items_window 2 -->
-
+                    <!-- Kilent Qo'shish -->
                     <div class="items_window">
                          <form action="" method="post" class="cilent-add">
                               <div class="cilent-item cilent-item_img">
@@ -336,6 +312,8 @@ include 'libs/libs.php';
                          </form>
                     </div>
 
+                    <!-- items_window 3 -->
+                    <!-- Kilentlar bilan ishlash -->
                     <div class="items_window">
                          <ul class="cilent_about nav nav-tabs" id="myTab" role="tablist">
                               <li class="nav-item" role="presentation">
@@ -369,37 +347,43 @@ include 'libs/libs.php';
                                         <label for="">Ummumiy kilent</label>
                                         <input type="search" id="user_search1" placeholder="Qidiruv">
                                    </div>
+                                   <p id="text"></p>
                                    <ul class="users_items_name">
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Abdunazarov Bobur</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Bahromjon</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
+                                        <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
+                                             <?php
+                                             $date1 = new DateTime($user['sana3oy']);
+                                             $date2 = new DateTime(date('Y-m-d'));
+                                             $interval = $date1->diff($date2);
+
+
+                                             if ($date1 <= $date2) {
+                                                  $days_m =  $interval->days . " kun o'tib ketdi";
+                                             } else {
+                                                  $days_m =  $interval->days . " kun qoldi";
+                                             }
+
+                                             ?>
+                                             <li>
+                                                  <form action="<?= $config['base']['url'] . 'server.php' ?>" method="get">
+                                                       <input type="hidden" required class="user_id" value="<?= $user['id'] ?>">
+                                                       <button class="user_id_about_a btn_user_about" type="submit" value="ok" name="user_about">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                 <div class="img">
+                                                                      <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
+                                                                 </div>
+                                                                 <div class="user_name_cilent">
+                                                                      <p class="user_name_title"><?= $user['fam'] . ' ' . $user['ism'] ?></p>
+                                                                      <p><?= $user['maxsulotNomi'] ?></p>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="user_date">
+                                                                 <p><?= $user['date'] ?></p>
+                                                                 <p><?= $days_m ?></p>
+                                                            </div>
+                                                       </button>
+                                                  </form>
+                                             </li>
+                                        <?php endforeach; ?>
                                    </ul>
                               </div>
                               <div class="tab-pane fade cilent_type" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -408,36 +392,30 @@ include 'libs/libs.php';
                                         <input type="search" id="user_search2" placeholder="Qidiruv">
                                    </div>
                                    <ul class="users_items_name users_items_name2">
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Abdunazarov Bobur</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Bahromjon</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
+                                        <?php if ($date1 <= $date2) { ?>
+                                             <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
+                                                  <li>
+                                                       <form action="<?= $config['base']['url'] . 'server.php' ?>" method="get">
+                                                            <input type="hidden" required class="user_id" value="<?= $user['id'] ?>">
+                                                            <button class="user_id_about_a btn_user_about" type="submit" value="ok" name="user_about">
+                                                                 <div class="d-flex align-items-center gap-2">
+                                                                      <div class="img">
+                                                                           <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
+                                                                      </div>
+                                                                      <div class="user_name_cilent">
+                                                                           <p class="user_name_title"><?= $user['fam'] . ' ' . $user['ism'] ?></p>
+                                                                           <p><?= $user['maxsulotNomi'] ?></p>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="user_date">
+                                                                      <p><?= $user['date'] ?></p>
+                                                                      <p><?= $interval->days . " kun o'tib ketdi" ?></p>
+                                                                 </div>
+                                                            </button>
+                                                       </form>
+                                                  </li>
+                                             <?php endforeach; ?>
+                                        <?php } ?>
                                    </ul>
 
                               </div>
@@ -447,36 +425,44 @@ include 'libs/libs.php';
                                         <input type="search" id="user_search3" placeholder="Qidiruv">
                                    </div>
                                    <ul class="users_items_name users_items_name3">
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Abdunazarov Bobur</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Bahromjon</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
+                                        <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
+                                             <?php
+                                             if ($user['miqdorSum'] != 'null') {
+
+                                                  $date1_q = new DateTime($user['sanaQarz']);
+                                                  $date2_q = new DateTime(date('Y-m-d'));
+                                                  $interval_q = $date1_q->diff($date2_q);
+
+                                                  if ($date1_q <= $date2_q) {
+                                                       $days_m_q =  $interval_q->days . " kun o'tib ketdi";
+                                                  } else {
+                                                       $days_m_q =  $interval_q->days . " kun qoldi";
+                                                  }
+                                             ?>
+                                                  <li>
+                                                       <form action="<?= $config['base']['url'] . 'server.php' ?>" method="get">
+                                                            <input type="hidden" required class="user_id" value="<?= $user['id'] ?>">
+                                                            <button class="user_id_about_a btn_user_about" type="submit" value="ok" name="user_about">
+                                                                 <div class="d-flex align-items-center gap-2">
+                                                                      <div class="img">
+                                                                           <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
+                                                                      </div>
+                                                                      <div class="user_name_cilent">
+                                                                           <p class="user_name_title"><?= $user['fam'] . ' ' . $user['ism'] ?></p>
+                                                                           <p><?= $user['maxsulotNomi'] ?></p>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="user_date">
+                                                                      <p><?= $user['date'] ?></p>
+                                                                      <p><?= $days_m_q ?></p>
+                                                                 </div>
+                                                            </button>
+                                                       </form>
+                                                  </li>
+
+                                             <?php } ?>
+
+                                        <?php endforeach; ?>
                                    </ul>
                               </div>
                               <div class="tab-pane fade cilent_type" id="contact2" role="tabpanel" aria-labelledby="contact-tab">
@@ -485,40 +471,42 @@ include 'libs/libs.php';
                                         <input type="search" id="user_search4" placeholder="Qidiruv">
                                    </div>
                                    <ul class="users_items_name users_items_name4">
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Abdunazarov Bobur</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
-                                        <li>
-                                             <div class="d-flex align-items-center gap-2">
-                                                  <div class="img">
-                                                       <img src="img/user_2.png" alt="">
-                                                  </div>
-                                                  <div class="user_name_cilent">
-                                                       <p class="user_name_title">Bahromjon</p>
-                                                       <p>Mahsulot nomi</p>
-                                                  </div>
-                                             </div>
-                                             <div class="user_date">
-                                                  <p>2024/08/02</p>
-                                                  <p>29 kun qoldi</p>
-                                             </div>
-                                        </li>
+                                        <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
+                                             <?php if ($user['miqdorSum'] != 'null') { ?>
+                                                  <?php if ($date1_q <= $date2_q) { ?>
+                                                       <li>
+                                                            <form action="<?= $config['base']['url'] . 'server.php' ?>" method="get">
+                                                                 <input type="hidden" required class="user_id" value="<?= $user['id'] ?>">
+                                                                 <button class="user_id_about_a btn_user_about" type="submit" value="ok" name="user_about">
+                                                                      <div class="d-flex align-items-center gap-2">
+                                                                           <div class="img">
+                                                                                <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
+                                                                           </div>
+                                                                           <div class="user_name_cilent">
+                                                                                <p class="user_name_title"><?= $user['fam'] . ' ' . $user['ism'] ?></p>
+                                                                                <p><?= $user['maxsulotNomi'] ?></p>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div class="user_date">
+                                                                           <p><?= $user['date'] ?></p>
+                                                                           <p><?= $days_m_q ?></p>
+                                                                      </div>
+                                                                 </button>
+                                                            </form>
+                                                       </li>
+                                                  <?php } ?>
+
+
+                                             <?php } ?>
+
+                                        <?php endforeach; ?>
                                    </ul>
                               </div>
                          </div>
                     </div>
+
+                    <!-- items_window 4 -->
+                    <!-- Tahrirlash -->
                     <div class="items_window">
                          <div class="edit_delete_title">
                               <p>Tahrirlash / O'chirish</p>
@@ -526,9 +514,9 @@ include 'libs/libs.php';
                          <div class="edit_delete_home">
                               <ul class="users_items_name">
                                    <?php foreach (GetAll('user', 'false', 'asc') as $key => $user) : ?>
-                                        <form action="<?= $config['base']['url'].'userEdit.php'?>" method="post">
+                                        <form action="<?= $config['base']['url'] . 'userEdit.php' ?>" method="post">
                                              <li>
-                                                  <input type="hidden" name="id" value="<?= $user['id']?>" >
+                                                  <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                                   <div class="d-flex align-items-center gap-2">
                                                        <div class="img">
                                                             <img src="<?= $config['base']['url'] . 'web/' ?>img/user_2.png" alt="">
@@ -556,6 +544,7 @@ include 'libs/libs.php';
                               </ul>
                          </div>
                     </div>
+                    <!-- items_window 5 -->
                     <!-- profil -->
                     <div class="items_window">
                          <div class="profil_content">
@@ -681,35 +670,101 @@ include 'libs/libs.php';
                     </div>
                </div>
           </div>
+          <!-- Modal -->
+          <div class="madal_user">
+               <div class="madal_user_content">
+                    <div class="modal_exit">
+                         <button class="modal_exit_btn">
+                              <i class="fa-solid fa-xmark"></i>
+                         </button>
+                    </div>
+                    <div class="modal_body">
+                         <ul>
+                              <li>
+                                   <span>Ism :</span>
+                                   <span>Boburjon</span>
+                              </li>
+                              <li>
+                                   <span>Familya :</span>
+                                   <span>Abdunazarov</span>
+                              </li>
+                              <li>
+                                   <span>Telefon 1 :</span>
+                                   <span>+998976665979</span>
+                              </li>
+                              <li>
+                                   <span>Telefon 2 :</span>
+                                   <span>+998903686840</span>
+                              </li>
+                              <li>
+                                   <span>Viloyat :</span>
+                                   <span>Farg'ona</span>
+                              </li>
+                              <li>
+                                   <span>Tuman :</span>
+                                   <span>Rishton</span>
+                              </li>
+                              <li>
+                                   <span>Manzil :</span>
+                                   <span>Avazboy qishlog'i Yangi zamon ko'chasi 9 uy</span>
+                              </li>
+                              <li>
+                                   <span>Maxsulot olingan sana :</span>
+                                   <span>2024-11-05</span>
+                              </li>
+                              <li>
+                                   <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
+                                   <span>2024-11-05</span>
+                              </li>
+                              <li>
+                                   <span>Qarzdorligi bor kilent :</span>
+                                   <span>1200 000 so'm</span>
+                              </li>
+                              <li>
+                                   <span>Texnik Xizmat ko'rsatildi :</span>
+                                   <span class="button_control">
+                                        <input type="radio" name="rdo" id="yes" />
+                                        <input type="radio" name="rdo" id="no" checked />
+                                        <div class="switch" class="">
+                                             <label for="yes">Xa</label>
+                                             <label for="no">Yo'q</label>
+                                             <span></span>
+                                        </div>
+                                   </span>
+                              </li>
+                              <li>
+                                   <span>Qarzdorlik :</span>
+                                   <span><input type="text" class="qarzdorlik"></span>
+                              </li>
+                              <li>
+                                   <button>
+                                        Saqlash
+                                   </button>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
      </section>
+     <!-- bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
+     <!-- Jquery -->
+     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-3.6.4.min.js"></script>
+     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/owlCarusel/owl.carousel.min.js"></script>
+     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-ui.min.js"></script>
+     <script src="<?= $config['base']['url'] . 'web/' ?>js/jQuery.js"></script>
      <!-- script -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
      <script src="<?= $config['base']['url'] . 'web/' ?>js/script.js"></script>
-     <!-- bootstrap -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </body>
 
 </html>
 
 <?php
-// /$date1 = date('Y-m-d');
-// $date2 = new DateTime('2024-08-30');
-// 
-// echo $date1;
-// echo $date2;
-
-// $interval = $date1->diff($date2);
-// echo $interval->days; // 3 kunni ko'rsatadi
-// 
-
-?>
-<?php
-
-
 // cilent qoshish
 if (isset($_POST['cilentAdd'])) {
      if (
@@ -724,8 +779,8 @@ if (isset($_POST['cilentAdd'])) {
                $s_miqdor = $_POST['miqdor'];
                $qarz_vaqt = $_POST['qarz_vaqt'];
           } else {
-               $s_miqdor = null;
-               $qarz_vaqt = null;
+               $s_miqdor = 'null';
+               $qarz_vaqt = 'null';
           }
           // Bugungi sanani olish
           $today = new DateTime();
@@ -824,6 +879,5 @@ if (isset($_POST['parol_admin_update'])) {
           }
      }
 }
-
 
 ?>

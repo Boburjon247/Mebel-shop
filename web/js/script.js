@@ -1,13 +1,3 @@
-// loading
-
-const loading = document.querySelector('.loading');
-const section = document.querySelector('.section');
-
-setInterval(() => {
-     loading.classList.add('hide');
-     section.classList.add('active')
-}, 2000);
-
 
 
 
@@ -190,4 +180,6 @@ search4.addEventListener('input', () => {
           document.querySelectorAll('.users_items_name4 li')
      )
 })
+
+
 
