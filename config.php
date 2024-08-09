@@ -14,4 +14,5 @@
     ];
     const url = 'http://localhost/bekend/Mebel-shop';
     const url_home = 'http://localhost/bekend/Mebel-shop/home.php';
+    const url_login = 'http://localhost/bekend/Mebel-shop/login.php';
 ?>

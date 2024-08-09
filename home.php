@@ -1,10 +1,11 @@
 <?php
 global $config;
+
 include  'config.php';
 include 'libs/libs.php';
 ?>
-
-<!DOCTYPE html>
+<?php if($_SESSION['login'] === 'active') {?>
+     <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,7 +28,6 @@ include 'libs/libs.php';
 <body>
 
      <section class="container-fluid section active">
-
           <!-- bat_top -->
 
           <div class="row bat_top">
@@ -129,8 +129,6 @@ include 'libs/libs.php';
                                         <p class="number_kilent">
                                              <?php
                                              $userArray = GetAll('user', 'false', 'asc');
-                                             $userArrayLength = count($userArray);
-                                             echo $userArrayLength;
                                              ?>
                                         </p>
                                    </div>
@@ -139,21 +137,23 @@ include 'libs/libs.php';
                                    <div class="card_content">
                                         <span class="user_icon_blok"><i class="fa-solid fa-users-gear"></i></span>
                                         <span class="user_text_blok">Xizmat ko'rsatish kerak</span>
-                                        <p class="number_kilent">999</p>
+                                        <p class="number_kilent"></p>
                                    </div>
                               </div>
                               <div class="card_items">
                                    <div class="card_content">
                                         <span class="user_icon_blok"><i class="fa-solid fa-user-clock"></i></span>
                                         <span class="user_text_blok">Qarzdor kilent</span>
-                                        <p class="number_kilent">999</p>
+                                        <p class="number_kilent">
+
+                                        </p>
                                    </div>
                               </div>
                               <div class="card_items">
                                    <div class="card_content">
                                         <span class="user_icon_blok"><i class="fa-solid fa-person-circle-exclamation"></i></span>
                                         <span class="user_text_blok">Qarz mudati tugaagan kilent</span>
-                                        <p class="number_kilent">999</p>
+                                        <p class="number_kilent"></p>
                                    </div>
                               </div>
                          </div>
@@ -680,67 +680,60 @@ include 'libs/libs.php';
                     </div>
                     <div class="modal_body">
                          <ul>
-                              <li>
-                                   <span>Ism :</span>
-                                   <span>Boburjon</span>
-                              </li>
-                              <li>
-                                   <span>Familya :</span>
-                                   <span>Abdunazarov</span>
-                              </li>
-                              <li>
-                                   <span>Telefon 1 :</span>
-                                   <span>+998976665979</span>
-                              </li>
-                              <li>
-                                   <span>Telefon 2 :</span>
-                                   <span>+998903686840</span>
-                              </li>
-                              <li>
-                                   <span>Viloyat :</span>
-                                   <span>Farg'ona</span>
-                              </li>
-                              <li>
-                                   <span>Tuman :</span>
-                                   <span>Rishton</span>
-                              </li>
-                              <li>
-                                   <span>Manzil :</span>
-                                   <span>Avazboy qishlog'i Yangi zamon ko'chasi 9 uy</span>
-                              </li>
-                              <li>
-                                   <span>Maxsulot olingan sana :</span>
-                                   <span>2024-11-05</span>
-                              </li>
-                              <li>
-                                   <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
-                                   <span>2024-11-05</span>
-                              </li>
-                              <li>
-                                   <span>Qarzdorligi bor kilent :</span>
-                                   <span>1200 000 so'm</span>
-                              </li>
-                              <li>
-                                   <span>Texnik Xizmat ko'rsatildi :</span>
-                                   <span class="button_control">
-                                        <input type="radio" name="rdo" id="yes" />
-                                        <input type="radio" name="rdo" id="no" checked />
-                                        <div class="switch" class="">
-                                             <label for="yes">Xa</label>
-                                             <label for="no">Yo'q</label>
-                                             <span></span>
-                                        </div>
-                                   </span>
-                              </li>
-                              <li>
-                                   <span>Qarzdorlik :</span>
-                                   <span><input type="text" class="qarzdorlik"></span>
-                              </li>
-                              <li>
-                                   <button>
-                                        Saqlash
-                                   </button>
-                              </li>
+                              <form action="" method="post">
+                                   <li>
+                                        <span>Ism :</span>
+                                        <span>Boburjon</span>
+                                   </li>
+                                   <li>
+                                        <span>Familya :</span>
+                                        <span>Abdunazarov</span>
+                                   </li>
+                                   <li>
+                                        <span>Telefon 1 :</span>
+                                        <span>+998976665979</span>
+                                   </li>
+                                   <li>
+                                        <span>Telefon 2 :</span>
+                                        <span>+998903686840</span>
+                                   </li>
+                                   <li>
+                                        <span>Viloyat :</span>
+                                        <span>Farg'ona</span>
+                                   </li>
+                                   <li>
+                                        <span>Tuman :</span>
+                                        <span>Rishton</span>
+                                   </li>
+                                   <li>
+                                        <span>Manzil :</span>
+                                        <span>Avazboy qishlog'i Yangi zamon ko'chasi 9 uy</span>
+                                   </li>
+                                   <li>
+                                        <span>Maxsulot olingan sana :</span>
+                                        <span>2024-11-05</span>
+                                   </li>
+                                   <li>
+                                        <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
+                                        <span>2024-11-05</span>
+                                   </li>
+                                   <li>
+                                        <span>Qarzdorligi bor kilent :</span>
+                                        <span>1200 000 so'm</span>
+                                   </li>
+                                   <li>
+                                        <span>Texnik Xizmat ko'rsatildi :</span>
+                                        <p>
+                                             <input type="checkbox" name="chek">
+                                        </p>
+                                   </li>
+                                   <li>
+                                        <input type="hidden">
+                                        <button type="submit" name="bool_add">
+                                             Saqlash
+                                        </button>
+                                   </li>
+                              </form>
                          </ul>
                     </div>
                </div>
@@ -763,6 +756,31 @@ include 'libs/libs.php';
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['bool_add'])) {
+     if (empty($_POST['chek'])) {
+          $chek = 'false';
+     } else {
+          $chek = 'true';
+     }
+     $db = connection();
+
+     $sql = $db->query("UPDATE user SET 
+                    bool = '{$chek}',
+                    miqdorSum = '{$sum}'
+                    WHERE id= '{$_POST['id_ab']}' ");
+     if ($sql) {
+          reflesh(url_home, '');
+     } else {
+          reflesh(url_home, '');
+     }
+};
+
+?>
+
+
+
 
 <?php
 // cilent qoshish
@@ -790,7 +808,7 @@ if (isset($_POST['cilentAdd'])) {
           $threeMonthsLater = clone $today; // Bugungi sanani nusxalash
           $threeMonthsLater->modify('+3 months');
           $uchoy = $threeMonthsLater->format('Y-m-d') . "\n";
-
+          $bool = "false";
           $aloqaInputGet = test_input([
                $_POST['ism'],
                $_POST['fam'],
@@ -803,12 +821,13 @@ if (isset($_POST['cilentAdd'])) {
                $s_miqdor,
                $qarz_vaqt,
                $uchoy,
-               $bugin
+               $bugin,
+               $bool
           ]);
           if (
                getInsert(
                     'user',
-                    ['ism', 'fam', 'tel1', 'tel2', 'viloyat', 'tuman', 'manzil', 'maxsulotNomi', 'miqdorSum', 'sanaQarz', 'sana3oy', 'date'],
+                    ['ism', 'fam', 'tel1', 'tel2', 'viloyat', 'tuman', 'manzil', 'maxsulotNomi', 'miqdorSum', 'sanaQarz', 'sana3oy', 'date', 'bool'],
                     $aloqaInputGet
                )
           ) {
@@ -879,5 +898,11 @@ if (isset($_POST['parol_admin_update'])) {
           }
      }
 }
-
 ?>
+<?php 
+}
+else{
+     reflesh(url,'');
+}
+?>
+

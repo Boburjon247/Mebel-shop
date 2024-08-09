@@ -1,7 +1,3 @@
-
-
-
-
 // tap
 const button_item = document.querySelectorAll(".btn_tap");
 const tabPanel = document.querySelectorAll(".items_window");
@@ -179,7 +175,8 @@ search4.addEventListener('input', () => {
           document.querySelectorAll('.users_items_name4 li .user_name_title'),
           document.querySelectorAll('.users_items_name4 li')
      )
-})
+});
+
 
 
 

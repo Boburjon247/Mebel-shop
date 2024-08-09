@@ -18,7 +18,7 @@ user_id.forEach((el, i) => {
                                    let data = response.data;
                                    $('.madal_user').empty();
                                    $.each(data, function (index, value) {
-                                        let qarz, mudat;
+                                        let qarz, mudat, chek;
                                         if (value.miqdorSum !== 'null') {
                                              qarz = value.miqdorSum;
                                         }
@@ -31,6 +31,12 @@ user_id.forEach((el, i) => {
                                         else {
                                              mudat = "Qarzdorlik yopilgan 😃";
                                         }
+                                        if( value.bool == 'true'){
+                                             chek = 'checked';
+                                        }
+                                        else{
+                                             chek = ' ';
+                                        }
                                         $('.madal_user').append(`
                                              <div class="madal_user_content">
                                                   <div class="modal_exit">
@@ -40,71 +46,64 @@ user_id.forEach((el, i) => {
                                                   </div>
                                                   <div class="modal_body">
                                                        <ul>
-                                                            <li>
-                                                                 <span>Ism :</span>
-                                                                 <span>${value.ism}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Familya :</span>
-                                                                 <span>${value.fam}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Telefon 1 :</span>
-                                                                 <span>${value.tel1}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Telefon 2 :</span>
-                                                                 <span>${value.tel2}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Viloyat :</span>
-                                                                 <span>${value.viloyat}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Tuman :</span>
-                                                                 <span>${value.tuman}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Manzil :</span>
-                                                                 <span>${value.maxsulotNomi}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Maxsulot olingan sana :</span>
-                                                                 <span>${value.date}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
-                                                                 <span>${value.sana3oy}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Qarzdorligi bor kilent :</span>
-                                                                 <span>${qarz}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Qarzdorligni yopish mudati :</span>
-                                                                 <span>${mudat}</span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Texnik Xizmat ko'rsatildi :</span>
-                                                                 <span class="button_control">
-                                                                      <input type="radio" name="rdo" id="yes"  />
-                                                                      <input type="radio" name="rdo" id="no" checked />
-                                                                      <div class="switch" class="">
-                                                                           <label for="yes">Xa</label>
-                                                                           <label for="no">Yo'q</label>
-                                                                           <span></span>
-                                                                      </div>
-                                                                 </span>
-                                                            </li>
-                                                            <li>
-                                                                 <span>Qarzdorlik :</span>
-                                                                 <span><input value="${qarz}" type="text" class="qarzdorlik"></span>
-                                                            </li>
-                                                            <li>
-                                                                 <button>
-                                                                      Saqlash
-                                                                 </button>
-                                                            </li>
+                                                            <form action="" method="post">
+                                                                      <li>
+                                                                           <span>Ism :</span>
+                                                                           <span>${value.ism}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Familya :</span>
+                                                                           <span>${value.fam}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Telefon 1 :</span>
+                                                                           <span>${value.tel1}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Telefon 2 :</span>
+                                                                           <span>${value.tel2}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Viloyat :</span>
+                                                                           <span>${value.viloyat}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Tuman :</span>
+                                                                           <span>${value.tuman}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Manzil :</span>
+                                                                           <span>${value.maxsulotNomi}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Maxsulot olingan sana :</span>
+                                                                           <span>${value.date}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
+                                                                           <span>${value.sana3oy}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Qarzdorligi bor kilent :</span>
+                                                                           <span>${qarz}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Qarzdorligni yopish mudati :</span>
+                                                                           <span>${mudat}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>Texnik Xizmat ko'rsatildi :</span>
+                                                                           <p>
+                                                                                <input type="checkbox" name="chek" ${chek} >
+                                                                           </p>
+                                                                      </li>
+                                                                      <li>
+                                                                           <input type="hidden" value="${value.id}" name='id_ab'>
+                                                                           <button type="submit" name="bool_add">
+                                                                                Saqlash
+                                                                           </button>
+                                                                      </li>
+                                                            </form>
                                                        </ul>
                                                   </div>
                                              </div>              

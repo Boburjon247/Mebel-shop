@@ -1,4 +1,5 @@
 <?php
+session_start();
 //db connection// databasr bilan aloqa
 function connection()
 {
@@ -140,13 +141,15 @@ function GetAllustun($tableName, $col1,$val1,$col2,$val2)
 {
    $db = connection();
    $sql = $db->query("SELECT * FROM $tableName WHERE  $col1 = '$val1' AND $col2 = '$val2'");
-   return getarray($sql);
+   $auth = $sql -> num_rows;
+   if($auth > 0) return true;
+   else return false;
 }
 // limit boyicha chiqaradi
-function GetAllRowLimit($tableName, $col,$val, $limit)
+function GetAllRowLimit($tableName, $limit)
 {
    $db = connection();
-   $sql = $db->query("SELECT * FROM $tableName WHERE  $col = '$val' ORDER BY id desc LIMIT $limit");
+   $sql = $db->query("SELECT * FROM $tableName WHERE  sanaQarz != $limit");
    return getarray($sql);
 }
 

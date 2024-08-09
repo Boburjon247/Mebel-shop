@@ -2,6 +2,9 @@
 global $config;
 include 'libs/libs.php';
 include  'config.php';
+
+
+$_SESSION['login'] = ' ';
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +26,11 @@ include  'config.php';
                <div class="content content_reg">
                     <p class="lable_title">Login to Your Account</p>
                     <span class="lable_title2">Enter your username & password to login</span>
-                    <form action="" method="post" class="login_1 Tab_C">
+                    <form action="<?= url_login ?>" method="get" class="login_1 Tab_C">
                          <div class="form-group">
-                              <input name="user" type="text" class="username" required="required">
-                              <span for="username" class="text_uesr"">Username</span>
-                             <i class=" fa-regular fa-user user_regist"></i>
+                              <input name="user" type="text" id="login" class="username" required="required">
+                              <span for="username" class="text_uesr">Username</span>
+                              <i class=" fa-regular fa-user user_regist"></i>
                          </div>
                          <div class="form-group">
                               <input name="parol" type="password" class="form-control password_login_reg" id="password" required="required">
@@ -37,14 +40,8 @@ include  'config.php';
                                    <i class="eyes_regest fa-regular fa-eye-slash"></i>
                               </p>
                          </div>
-                         <div class="form-group form-group3">
-                              <label for="checkbox">
-                                   <input type="checkbox" id="checkbox" class="checkbox_regist">
-                                   <p>Remember me</p>
-                              </label>
-                         </div>
                          <div class="regis_btn">
-                              <button type="submit" name="loginBtn" class="btn registration-btn">
+                              <button type="submit" name="loginBtn" id="btn_click_login" class="btn registration-btn">
                                    <span>Login</span>
                               </button>
                          </div>
@@ -54,25 +51,8 @@ include  'config.php';
      </div>
 </body>
 
+<script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-3.6.4.min.js"></script>
 <script src="<?= $config['base']['url'] . 'web/' ?>js/login.js"></script>
 
+
 </html>
-
-
-<?php
-if (isset($_POST['loginBtn'])) {
-     if (
-          (isset($_POST['user']) && !empty($_POST['user'])) &&
-          (isset($_POST['parol']) && !empty($_POST['parol']))
-     ) {
-          $login = $_POST['user'];
-          $password = $_POST['parol'];
-
-          if (getHasId('admin', ['login', 'parol'], [$login, $password], "AND id=1")) {
-               // $_SESSION['login'] = 'system';
-               reflesh(url_home,'');
-          }
-     }
-}
-
-?>
