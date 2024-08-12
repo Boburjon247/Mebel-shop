@@ -18,7 +18,7 @@ user_id.forEach((el, i) => {
                                    let data = response.data;
                                    $('.madal_user').empty();
                                    $.each(data, function (index, value) {
-                                        let qarz, mudat, chek;
+                                        let qarz, mudat, chek, chek1,chek2, qarz_sana, disabled;
                                         if (value.miqdorSum !== 'null') {
                                              qarz = value.miqdorSum;
                                         }
@@ -31,11 +31,33 @@ user_id.forEach((el, i) => {
                                         else {
                                              mudat = "Qarzdorlik yopilgan 😃";
                                         }
-                                        if( value.bool == 'true'){
+                                        if (value.bool == 'true') {
                                              chek = 'checked';
                                         }
-                                        else{
+                                        else {
                                              chek = ' ';
+                                        }
+                                        if(value.bool_q == 'true'){
+                                             chek1 = 'checked disabled';
+                                        }
+                                        else{
+                                             chek1 = ' ';
+                                        }
+                                        
+                                        if(value.bool2 == 'true'){
+                                             chek2 = 'checked';
+                                        }
+                                        else{
+                                             chek2 = ' ';
+                                        }
+                                        if(value.qarzYopilganSana != '0000-00-00'){
+                                             qarz_sana = value.qarzYopilganSana;
+                                             disabled = 'readonly'
+                                             
+                                        }
+                                        else{
+                                             qarz_sana = "0000-00-00";
+                                             disabled = ' ';
                                         }
                                         $('.madal_user').append(`
                                              <div class="madal_user_content">
@@ -80,8 +102,24 @@ user_id.forEach((el, i) => {
                                                                            <span>${value.date}</span>
                                                                       </li>
                                                                       <li>
-                                                                           <span>Texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
+                                                                           <span>3 oydan so'ng texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
                                                                            <span>${value.sana3oy}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>3 oydan so'ng texnik xizmat ko'rsatildi :</span>
+                                                                           <p>
+                                                                                <input class="chek_css" type="checkbox" name="chek" ${chek} >
+                                                                           </p>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span>6 oydan so'ng texnik xizmat ko'rsatish kerak bo'lgan sana :</span>
+                                                                           <span>${value.oltiOy}</span>
+                                                                      </li>
+                                                                      <li>
+                                                                           <span> 6 oydan so'ng texnik xizmat ko'rsatildi :</span>
+                                                                           <p>
+                                                                                <input class="chek_css" type="checkbox" name="chek2" ${chek2} >
+                                                                           </p>
                                                                       </li>
                                                                       <li>
                                                                            <span>Qarzdorligi bor kilent :</span>
@@ -92,9 +130,10 @@ user_id.forEach((el, i) => {
                                                                            <span>${mudat}</span>
                                                                       </li>
                                                                       <li>
-                                                                           <span>Texnik Xizmat ko'rsatildi :</span>
-                                                                           <p>
-                                                                                <input type="checkbox" name="chek" ${chek} >
+                                                                           <span>Qarzdorlik yopildi :</span>
+                                                                           <p class="input_and_chek">
+                                                                                <input ${chek1} class="chek_css" type="checkbox" name="chek1">
+                                                                                <input value="${qarz_sana}" ${disabled} type="date" name="qarz_sanas">
                                                                            </p>
                                                                       </li>
                                                                       <li>

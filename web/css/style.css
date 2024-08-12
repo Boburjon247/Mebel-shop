@@ -1141,15 +1141,56 @@ button.btn span::after {
      text-align: start;
 }
 
-.user_date p:nth-child(1) {
-     font-size: 18px;
-
+.user_date {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
 }
 
-.user_date p:nth-child(2) {
-     font-size: 12px;
+.user_date p:nth-child(1) {
+     font-size: 16px;
      color: orange;
-     text-align: right;
+}
+
+.user_date p:nth-child(2),
+.user_date p:nth-child(3),
+.user_date .qarz_paq_user {
+     border: 1px solid #3A537E;
+     padding: 7px 10px;
+     border-radius: 5px;
+     color: white;
+     background-color: #141A28;
+}
+
+.user_date p:nth-child(2).active {
+     border: 1px solid lime;
+     color: lime;
+}
+
+.user_date p:nth-child(2).noactive {
+     border: 1px solid red;
+     color: red;
+}
+
+.user_date p:nth-child(3).active {
+     border: 1px solid lime;
+     color: lime;
+}
+
+.user_date p:nth-child(3).noactive {
+     border: 1px solid red;
+     color: red;
+}
+
+.user_date .qarz_paq_user.active {
+     border: 1px solid lime;
+     color: lime;
+}
+
+.user_date .qarz_paq_user.noactive {
+     border: 1px solid red;
+     color: red;
 }
 
 .users_items_name li:hover {
@@ -1228,7 +1269,8 @@ button.btn span::after {
      padding: 30px;
      transition: all .3s;
 }
-.madal_user.active{
+
+.madal_user.active {
      top: 0;
      transition: .3s;
 }
@@ -1360,10 +1402,12 @@ label[for=no] {
 #no:checked~.switch label[for=no] {
      color: #fff;
 }
-.modal_body ul{
+
+.modal_body ul {
      width: 100%;
 }
-.modal_body ul li{
+
+.modal_body ul li {
      width: 100%;
      padding: 8px 12px;
      font-size: 18px;
@@ -1375,12 +1419,13 @@ label[for=no] {
      border-bottom: 1px solid rgba(175, 238, 238, 0.16);
 }
 
-.modal_body ul li span:nth-child(1){
+.modal_body ul li span:nth-child(1) {
      color: #5b5b5b;
      font-size: 20px;
      font-weight: bold;
 }
-.modal_body ul li .qarzdorlik{
+
+.modal_body ul li .qarzdorlik {
      background-color: transparent;
      border: 1px solid rgba(175, 238, 238, 0.16);
      padding: 5px;
@@ -1388,11 +1433,58 @@ label[for=no] {
      color: #fff;
      border-radius: 5px;
 }
-.modal_body ul li button{
+
+.modal_body ul li button {
      background-color: #092756;
      color: #fff;
      padding: 8px 25px;
 }
-.button_control{
+
+.button_control {
      padding-top: 25px;
+}
+input[type=checkbox] {
+     position: relative;
+     cursor: pointer;
+}
+
+input[type=checkbox]:before {
+     content: "";
+     display: block;
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     top: 0;
+     left: 0;
+     border: 2px solid #555555;
+     border-radius: 3px;
+     background-color: #3A537E;
+}
+
+input[type=checkbox]:checked:after {
+     content: "";
+     display: block;
+     width: 5px;
+     height: 10px;
+     border: solid white;
+     border-width: 0 2px 2px 0;
+     -webkit-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+     position: absolute;
+     top: 5px;
+     left: 8px;
+}
+.input_and_chek{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+}
+.input_and_chek input{
+     background-color: #092756;
+     border: 1px solid #3A537E;
+     color: white;
+     padding: 8px 12px;
+     border-radius: 5px;
 }
